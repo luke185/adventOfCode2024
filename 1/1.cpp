@@ -6,6 +6,9 @@
 
 using namespace std;
 
+/**
+ * fill 2 lists with data from input file
+ */
 void fillLists(vector<int>& left, vector<int>& right) {
     ifstream inputFile("input");
     if (!inputFile) {
@@ -24,6 +27,11 @@ void fillLists(vector<int>& left, vector<int>& right) {
     }
 }
 
+/**
+ * star 1
+ *
+ * Returns total distance from 2 lists
+ */
 int getDistance(vector<int>& left, vector<int>& right) {
     vector<int> result;
     ranges::sort(left);
@@ -39,6 +47,11 @@ int getDistance(vector<int>& left, vector<int>& right) {
     return reduce(result.begin(), result.end());
 }
 
+/**
+* star 2
+*
+* Returns similarity from 2 lists
+*/
 int getSimilarity(vector<int>& left, vector<int>& right) {
 
     vector<int> results;
@@ -64,6 +77,5 @@ int main() {
     int similartity {};
     similartity = getSimilarity(left, right);
     cout << similartity << endl;
-
 
 }
